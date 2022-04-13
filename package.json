@@ -1,19 +1,19 @@
 {
-  "name": "react-use-intercom",
-  "author": "devrnt",
+  "name": "@thanhvo102/react-use-intercom",
+  "author": "devrnt, thanhvo102",
   "module": "dist/react-use-intercom.esm.js",
   "description": "React Intercom integration without the hassle, driven by hooks.",
-  "homepage": "https://github.com/devrnt/react-use-intercom#readme",
+  "homepage": "https://github.com/thanhvo102/react-use-intercom#readme",
   "version": "2.0.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devrnt/react-use-intercom"
+    "url": "https://github.com/thanhvo102/react-use-intercom"
   },
   "bugs": {
-    "url": "https://github.com/devrnt/react-use-intercom/issues"
+    "url": "https://github.com/thanhvo102/react-use-intercom/issues"
   },
   "files": [
     "dist",
