@@ -7,7 +7,7 @@
  *
  * @see {@link https://developers.intercom.com/installing-intercom/docs/basic-javascript}
  */
-const initialize = (appId: string, timeout = 0) => {
+const initialize = (appId: string, timeout = 0, widgetUrl = '') => {
   var w = window;
   var ic = w.Intercom;
   if (typeof ic === 'function') {
@@ -28,7 +28,7 @@ const initialize = (appId: string, timeout = 0) => {
         var s = d.createElement('script');
         s.type = 'text/javascript';
         s.async = true;
-        s.src = 'https://widget.intercom.io/widget/' + appId;
+        s.src = widgetUrl || 'https://widget.intercom.io/widget/' + appId;
         var x = d.getElementsByTagName('script')[0];
         x.parentNode.insertBefore(s, x);
       }, timeout);

@@ -437,4 +437,8 @@ export type IntercomProviderProps = {
    * Pass properties to `boot` method when `autoBoot` is `true`
    */
   autoBootProps?: IntercomProps;
+  /**
+   * If you need to route your widget getting request through a different endpoint than the default
+   */
+  widgetUrl?: string;
 };

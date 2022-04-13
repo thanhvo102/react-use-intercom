@@ -26,6 +26,7 @@ export const IntercomProvider: React.FC<React.PropsWithChildren<
   shouldInitialize = !isSSR,
   apiBase,
   initializeDelay,
+  widgetUrl,
   ...rest
 }) => {
   const isBooted = React.useRef(false);
@@ -76,7 +77,7 @@ export const IntercomProvider: React.FC<React.PropsWithChildren<
   );
 
   if (!isSSR && shouldInitialize && !isInitialized.current) {
-    initialize(appId, initializeDelay);
+    initialize(appId, initializeDelay, widgetUrl);
 
     // attach listeners
     if (onHide) IntercomAPI('onHide', onHide);
