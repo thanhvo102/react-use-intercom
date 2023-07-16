@@ -13,7 +13,7 @@
 ## Features
 * Hooks
 * Written in TypeScript
-* Documented, self explaining methods 
+* Documented, self explaining methods
 * [Tiny size](https://bundlephobia.com/result?p=react-use-intercom@latest) without any external libraries
 * Safeguard for SSR environments (NextJS, Gatsby)
 * Compatible to hook into existing Intercom instance (loaded by [Segment](https://segment.com/))
@@ -22,13 +22,13 @@
 
 ```sh
 # pnpm
-pnpm add react-use-intercom
+pnpm add @thanhvo102/react-use-intercom
 
 # npm
-npm install react-use-intercom
+npm install @thanhvo102/react-use-intercom
 
 # yarn
-yarn add react-use-intercom
+yarn add @thanhvo102/react-use-intercom
 ```
 
 ## Quickstart
@@ -36,7 +36,7 @@ yarn add react-use-intercom
 ```ts
 import * as React from 'react';
 
-import { IntercomProvider, useIntercom } from 'react-use-intercom';
+import { IntercomProvider, useIntercom } from '@thanhvo102/react-use-intercom';
 
 const INTERCOM_APP_ID = 'your-intercom-app-id';
 
@@ -56,7 +56,7 @@ const HomePage = () => {
 
 ## Context
 This library is a React abstraction of [IntercomJS](https://developers.intercom.com/installing-intercom/docs/intercom-for-web). `react-use-intercom` tries to keep as close as a one-on-one abstraction of the "vanilla" Intercom functionality.
- 
+
 Note that a lot of issues could be related to the vanilla IntercomJS. Please see https://forum.intercom.com/s/ before reporting an issue here.
 
 ## Links
@@ -72,7 +72,7 @@ Note that a lot of issues could be related to the vanilla IntercomJS. Please see
 * [useIntercom](#useintercom)
 * [IntercomProps](#intercomprops)
 
-### IntercomProvider 
+### IntercomProvider
 `IntercomProvider` is used to initialize the `window.Intercom` instance. It makes sure the initialization is only done once. If any listeners are passed, the `IntercomProvider` will make sure these are attached.
 
 Place the `IntercomProvider` as high as possible in your application. This will make sure you can call `useIntercom` anywhere.
@@ -125,7 +125,7 @@ const App = () => {
 ### useIntercom
 Used to retrieve all methods bundled with Intercom. These are based on the official [Intercom docs](https://developers.intercom.com/installing-intercom/docs/javascript-api-attributes-objects). Some extra methods were added to improve convenience.
 
- Make sure `IntercomProvider` is wrapped around your component when calling `useIntercom()`. 
+ Make sure `IntercomProvider` is wrapped around your component when calling `useIntercom()`.
 
 **Remark** - You can't use `useIntercom()` in the same component where `IntercomProvider` is initialized.
 
@@ -144,7 +144,7 @@ Used to retrieve all methods bundled with Intercom. These are based on the offic
 | showNewMessage  | (content?: string) => void                 | shows the Messenger as if a new conversation was just created. If `content` is passed, it will fill in the message composer         |
 | getVisitorId    | () => string                               | gets the visitor id                                                                                                                 |
 | startTour       | (tourId: number) => void                   | starts a tour based on the `tourId`                                                                                                 |
-| trackEvent      | (event: string, metaData?: object) => void | submits an `event` with optional `metaData`      
+| trackEvent      | (event: string, metaData?: object) => void | submits an `event` with optional `metaData`
 | showArticle      | (articleId: string) => void | opens the Messenger with the specified article by `articleId`
 | startSurvey      | (surveyId: number) => void | Trigger a survey in the Messenger by `surveyId`
 | showSpace     | (spaceName: IntercomSpace) => void | Opens the Messenger with the specified space
@@ -223,28 +223,28 @@ const HomePage = () => {
     </>
   );
 };
-``` 
-### IntercomProps 
+```
+### IntercomProps
 All the Intercom default attributes/props are camel cased (`appId` instead of `app_id`) in `react-use-intercom`, see [IntercomProps](src/types.ts) to see what attributes you can pass to `boot` or `update`. Or check the Intercom [docs](https://developers.intercom.com/installing-intercom/docs/javascript-api-attributes-objects)
  to see all the available attributes/props.
 
  **Remark** - all the listed Intercom attributes [here](https://developers.intercom.com/installing-intercom/docs/javascript-api-attributes-objects) are snake cased, in `react-use-intercom` these are camel cased.
 
  #### Custom attributes
- Still want to pass custom attributes to Intercom? Whether `boot` or `update` is used, you can add your custom properties by passing these through `customAttributes` in the `boot` or `update` method. 
+ Still want to pass custom attributes to Intercom? Whether `boot` or `update` is used, you can add your custom properties by passing these through `customAttributes` in the `boot` or `update` method.
 
 **Remark** - the keys of the `customAttributes` object should be snake cased (this is how Intercom wants them). They are rawly passed to Intercom.
  ```ts
  const { boot } = useIntercom();
 
- boot({ 
+ boot({
   name: 'Russo',
   customAttributes: { custom_attribute_key: 'hi there' },
 })
  ```
 
 ## Playground
-Small playground to showcase the functionalities of `react-use-intercom`. 
+Small playground to showcase the functionalities of `react-use-intercom`.
 
 ### useIntercom
 [https://devrnt.github.io/react-use-intercom/#/useIntercom](https://devrnt.github.io/react-use-intercom/#/useIntercom)
@@ -252,7 +252,7 @@ Small playground to showcase the functionalities of `react-use-intercom`.
 ### useIntercom (with Intercom tour)
 [https://devrnt.github.io/react-use-intercom/#/useIntercomTour](https://devrnt.github.io/react-use-intercom/#/useIntercomTour)
 
-## Examples 
+## Examples
 Go to [examples](https://github.com/devrnt/react-use-intercom/tree/main/apps/examples) to check out some integrations (Gatsby, NextJS...).
 
 ## TypeScript
